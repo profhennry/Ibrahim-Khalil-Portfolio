@@ -1,0 +1,1979 @@
+:root {
+  --background-color: #fce2d1;
+  --text-color: #393531;
+  --primary-color: black;
+  --secondary-color: #f5f5f5;
+  --accent-color: #ffb646;
+  --button-text-color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.center_column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+nav {
+  height: 80px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.navbar {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #333;
+}
+.main_container {
+  width: 1200px;
+  max-width: 1200px;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hi {
+  width: 100%;
+  padding: 0px 50px;
+  max-height: 1000px;
+  margin-top: 100px;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-buttons {
+  display: flex;
+  align-items: center;
+}
+.fa-bars:before {
+  content: "\f0c9";
+  font-size: 24px;
+}
+.talk-button:hover {
+  color: var(--secondary-color);
+  transition: 0.5s;
+}
+.talk-button {
+  text-decoration: none;
+  color: var(--text-color);
+  margin-right: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.arrow {
+  font-weight: 900;
+  font-size: 20px;
+  margin-left: 5px;
+}
+/* Menu icon styling */
+.menu-icon {
+  font-size: 2.5rem;
+  height: 80px;
+  width: 80px;
+  background: var(--primary-color);
+  color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+/* Sidebar styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Initially hidden off-screen */
+  width: 400px;
+  height: 100%;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 20px;
+  transition: right 0.8s ease;
+  z-index: 999;
+}
+
+/* Sidebar header */
+.sidebar .menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar .close-btn {
+  font-size: 2.5rem;
+  color: #ffa500;
+  cursor: pointer;
+}
+
+/* Sidebar menu list */
+.sidebar .menu-list {
+  list-style: none;
+  margin-top: 70px;
+}
+
+.sidebar .menu-list li {
+  padding: 0px 0;
+  border-bottom: 1px solid #333;
+  margin-bottom: 30px;
+}
+
+.sidebar .menu-list li a:hover {
+  color: var(--accent-color);
+}
+.sidebar .menu-list li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  transition: 0.5s;
+}
+
+/* Arrow hover animation */
+.sidebar .menu-list li a .arrow {
+  transition: transform 0.3s ease;
+}
+
+/* Show sidebar when active */
+.sidebar.active {
+  right: 0; /* Slide in from the right */
+}
+.intro_txt {
+  height: 600px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.greeting {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  letter-spacing: 5px;
+  font-weight: 600;
+}
+
+.greeting span {
+  letter-spacing: 0px;
+  margin-left: 5px;
+  margin-right: 25px;
+}
+
+.name {
+  letter-spacing: 5px;
+  font-size: 120px;
+  line-height: 96px;
+  font-weight: bold;
+}
+
+.name span {
+  display: block;
+  font-size: 1em;
+}
+
+.role {
+  font-size: 2rem;
+  color: #393531;
+  margin: 10px 0 20px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.primary-button,
+.secondary-button {
+  padding: 15px 35px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+a:hover .arrow {
+  transform: translate(5px, -5px);
+  transition: transform 0.5s ease;
+}
+
+.primary-button:hover .arrow {
+  transform: translate(5px, -5px);
+  transition: transform 0.5s ease;
+}
+.secondary-button:hover .arrow {
+  transform: translate(5px, -5px);
+  transition: transform 0.5s ease;
+}
+.primary-button:hover {
+  background: var(--button-text-color);
+  color: var(--primary-color);
+  border: 1px solid var(--text-color);
+  transition: 0.5s;
+}
+.primary-button {
+  background-color: var(--primary-color);
+  color: var(--button-text-color);
+}
+
+.secondary-button:hover {
+  transition: 0.5s;
+  background: var(--primary-color);
+  color: var(--button-text-color);
+}
+.secondary-button {
+  color: var(--primary-color);
+  border: 1px solid var(--text-color);
+}
+
+.primary-button span,
+.secondary-button span {
+  margin-left: 5px;
+}
+.profile_shape {
+  overflow: hidden;
+}
+.intro_txt .profile_shape {
+  height: 90px;
+  width: 81px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+  margin-bottom: 170px;
+}
+.intro_profile .profile_shape {
+  width: 500px;
+  height: 800px;
+  background: var(--accent-color);
+  transform: rotate(45deg);
+  z-index: -2;
+  position: relative;
+  bottom: 250px;
+  left: 160px;
+  border-radius: 7rem;
+}
+.intro_profile {
+  height: 500px;
+  width: 50%;
+  z-index: 0;
+}
+.button-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+.rotating-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 5px solid var(--text-color);
+  box-sizing: border-box;
+  animation: rotate 3s linear infinite;
+  z-index: 1;
+}
+
+.static-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--accent-color);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.static-content::before {
+  content: "\\2193"; /* Downward arrow */
+  font-size: 24px;
+  color: var(--text-color);
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(0deg); /* Matches rotation */
+  pointer-events: none; /* So it doesn't block clicks */
+}
+
+.text-path {
+  fill: var(--secondary-color);
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  letter-spacing: 2px;
+  text-anchor: middle;
+}
+
+.profile_shape img {
+  transform: rotate(-45deg);
+  position: absolute;
+  bottom: -60px;
+  height: 550px;
+}
+.social {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clients_counter {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.clients {
+  font-size: 32px;
+  font-weight: 700;
+}
+.social-icons {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+.social_1 {
+  margin: 0px 15px;
+}
+.role_s {
+  margin-left: 10px;
+  font-size: 32px;
+}
+.devider {
+  font-size: 30px;
+  color: var(--text-color);
+}
+.fab:hover,
+.far:hover {
+  color: var(--accent-color);
+  transition: 0.5s;
+}
+.fab,
+.far {
+  font-weight: 700;
+  color: var(--text-color);
+  font-size: 22px;
+}
+/*
+ * ==============================
+ * My specialties section
+ * ==============================
+ * Author: Ibrahim Khalil 
+ * ==============================
+ */
+/* Specialties Section */
+.specialties-section {
+  margin-top: 100px;
+}
+
+.specialties-section .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.specialties-section .header .left h4 {
+  color: var(--accent-color);
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 22px;
+}
+
+.specialties-section .header .left h1 {
+  font-size: 4rem;
+}
+
+.specialties-section .header .left .highlight {
+  color: var(--accent-color);
+}
+.my_specialities_cards {
+  width: 100%;
+  height: 500px;
+  gap: 100px;
+}
+
+.right p {
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+.specialties-section .header .right {
+  max-width: 50%;
+}
+
+.specialties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  width: 60%;
+  column-gap: 60px;
+}
+
+.card:hover {
+  box-shadow: 0px 36px 100px 0px rgba(8, 8, 8, 0.05);
+}
+.card {
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.5s ease;
+  height: 200px;
+  width: 240px;
+  display: flex;
+  transition: 0.5s;
+}
+.icons {
+  height: 50px;
+  width: 50px;
+  background-color: var(--button-text-color);
+  border-radius: 50%;
+}
+.card .icon {
+  font-size: 1.5rem;
+  height: 100%;
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 20px 10px;
+}
+
+.card p {
+  font-weight: 700;
+  font-size: 18px;
+  opacity: 0.7;
+  font-family: "Syne", sans-serif;
+  letter-spacing: 1px;
+  line-height: 25px;
+}
+
+.card:hover .icons {
+  background-color: var(--secondary-color);
+}
+.card:hover p {
+  color: var(--accent-color);
+  opacity: 1;
+}
+.card:hover a {
+  transform: translate(5px, -5px);
+  transition: transform 0.5s ease;
+  color: var(--accent-color);
+}
+.card:hover {
+  background-color: var(--button-text-color);
+}
+.primary-button:hover .arrow {
+  transform: translate(5px, -5px);
+  transition: transform 0.5s ease;
+}
+
+.card a {
+  position: absolute;
+  bottom: 40px;
+  right: 30px;
+  font-size: 2.2rem;
+  color: var(--text-color);
+  text-decoration: none;
+}
+.card_link {
+  height: 200px;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-box {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 10px;
+  position: relative;
+  height: 430px;
+  width: 370px;
+}
+
+.contact-box .say-hello {
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.contact-box a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.contact-box:hover .arrow {
+  transform: translate(5px, -5px);
+  transition: transform 0.5s ease;
+}
+.contact-box .arrow {
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  font-size: 4.2rem;
+  color: var(--accent-color);
+  text-decoration: none;
+}
+.say_hello {
+  position: absolute;
+  bottom: 40px;
+  left: 30px;
+}
+.my_specialities_cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*
+ * ==============================
+ * Hero section
+ * ==============================
+ * Author: Ibrahim Khalil 
+ * ==============================
+ */
+.hero-section {
+  padding: 60px 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-section .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  max-width: 1200px;
+  height: 600px;
+}
+
+.hero-section .content {
+  max-width: 50%;
+}
+
+.hero-section .content .subtitle {
+  color: var(--accent-color);
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 22px;
+}
+
+.hero-section .content .title {
+  font-size: 4rem;
+}
+
+.hero-section .content .title span {
+  color: var(--accent-color);
+}
+
+.hero-section .content .description {
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  color: var(--text-color);
+  opacity: 0.9;
+  margin: 20px 0px;
+}
+
+.hero-section .content .location {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.hero-section .stats {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.hero-section .stats .stat h2 {
+  font-size: 32px;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.hero-section .stats .stat p {
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+.cta-button:hover .arrow {
+  transform: translate(5px, -5px);
+  transition: transform 0.5s ease;
+}
+.hero-section .cta-button {
+  display: inline-block;
+  margin-top: 30px;
+  background-color: var(--text-color);
+  color: var(--secondary-color);
+  padding: 15px 70px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.hero-section .cta-button:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+}
+
+.hero-section .image-container {
+  position: relative;
+  max-width: 45%;
+  text-align: center;
+  bottom: 40px;
+}
+
+.hero-section .image-container .blob {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.hero-section .image-container .profile-image {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-section .image-container .experience {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  padding: 10px 30px;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 3;
+}
+
+.hero-section .image-container .experience p {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.hero-section .image-container .experience span {
+  font-size: 14px;
+}
+
+/*
+ * ==============================
+ * Resume section
+ * ==============================
+ * Author: Ibrahim Khalil 
+ * ==============================
+ */
+.resume-section {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: var(--secondary-color);
+  font-family: "Arial", sans-serif;
+  height: 800px;
+}
+
+.resume-container {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  gap: 100px;
+}
+
+.resume-left {
+  width: 40%;
+}
+
+.resume-heading {
+  font-size: 24px;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.resume-title {
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--text-color);
+  margin-bottom: 30px;
+}
+
+.resume-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--button-text-color);
+  border: 1px solid var(--secondary-color);
+  padding: 15px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+  background-color: var(--text-color);
+  color: var(--button-text-color);
+}
+
+.menu-item.active {
+  background-color: var(--text-color);
+  color: var(--secondary-color);
+}
+
+.resume-right {
+  flex: 2;
+}
+
+.resume-location {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.resume-description {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 1px;
+  color: var(--text-color);
+  opacity: 0.9;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.resume-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resume-details li {
+  font-size: 18px;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.resume-details strong {
+  margin-left: 100px;
+  font-size: 22px;
+}
+/*
+ * ==============================
+ * Portfolio section
+ * ==============================
+ * Author: Ibrahim Khalil 
+ * ==============================
+ */
+
+.portfolio-section {
+  background-color: #fbe9d9;
+  padding: 60px 20px;
+  text-align: center;
+}
+.portfolio-items {
+  gap: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.portfolio-section h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+.portfolio-subtitle {
+  font-size: 2rem;
+}
+.portfolio-section span {
+  color: var(--accent-color);
+}
+.portfolio-item {
+  height: 100%;
+  width: 45%;
+}
+.portfolio-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.portfolio-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.portfolio-card {
+  background-color: var(--button-text-color);
+  border-radius: 10px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 320px;
+  text-align: left;
+}
+.portfolio-tags .tag:hover {
+  color: var(--secondary-color);
+  background: var(--text-color);
+}
+.portfolio-tags a:hover .hi2 {
+  color: var(--accent-color);
+}
+.portfolio-tags a {
+  text-decoration: none;
+}
+.portfolio-tags {
+  margin: 16px 0px;
+  text-align: start;
+}
+.portfolio-name span {
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-right: 20px;
+}
+.portfolio-name {
+  text-align: start;
+  font-size: 1.5rem;
+}
+.portfolio-tags .tag {
+  color: var(--text-color);
+  background: var(--secondary-color);
+  padding: 5px 10px;
+  border: 1px solid var(--text-color);
+  border-radius: 40px;
+  font-size: 12px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.portfolio-name a:hover {
+  color: var(--accent-color);
+}
+.portfolio-name a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 25px !important;
+  transition: 0.5s;
+}
+.portfolio-name {
+  text-align: start;
+  font-size: 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px !important;
+  align-items: center;
+}
+.portfolio-card img {
+  width: 100%;
+  display: block;
+}
+
+.portfolio-card-content {
+  padding: 20px;
+}
+
+.portfolio-card-content .tags {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.portfolio-card-content .tag {
+  font-size: 12px;
+  color: var(--button-text-color);
+  background-color: var(--primary-color);
+  padding: 5px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.portfolio-card-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+.portfolio-footer .portfolio-link {
+  display: inline-block;
+  margin: 40px auto;
+  padding: 15px 32rem;
+  background-color: var(--primary-color);
+  color: var(--button-text-color);
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.portfolio-footer .portfolio-link:hover {
+  background-color: #fbe9d9;
+  border: 1px solid var(--text-color);
+  transition: 0.5s;
+  color: var(--text-color);
+}
+.portfolio-link span {
+  font-size: 18px;
+  margin-left: 5px;
+}
+/*
+ * ==============================
+ * Testimonial section
+ * ==============================
+ * Author: Ibrahim Khalil 
+ * ==============================
+ */
+.testimonial-section .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  max-width: 1200px;
+}
+.testimonial-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.testimonial-header {
+  flex: 1;
+  text-align: left;
+}
+
+.testimonial-header p {
+  font-size: 2rem;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: bolder;
+}
+.testimonial-slider {
+  border-radius: 10px;
+}
+.testimonial-header h2 {
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 1.2;
+  color: var(--primary-color);
+}
+
+.testimonial-header span {
+  color: var(--accent-color);
+}
+
+.testimonial-slider {
+  flex: 2;
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonial-track {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  cursor: grab;
+}
+
+.testimonial-card {
+  flex: 1 0 300px;
+  min-width: 300px;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.testimonial-card blockquote {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
+  position: relative;
+  margin: 0 0 20px;
+}
+
+.testimonial-card .quote-icon {
+  font-size: 36px;
+  color: var(--accent-color);
+  margin-right: 10px;
+  vertical-align: top;
+}
+
+.testimonial-card .author {
+  font-size: 14px;
+  color: var(--text-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+.testimonial-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.testimonial-track {
+  display: flex;
+  transition: transform 0.3s ease-out;
+  will-change: transform;
+}
+
+.testimonial-card {
+  flex: 0 0 100%; /* Each card takes up full width of the container */
+  box-sizing: border-box;
+}
+/*
+ * ==============================
+ * Brand section
+ * ==============================
+ * Author: Ibrahim Khalil 
+ * ==============================
+ */
+.slider-container {
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.slider-container p {
+  color: var(--secondary-color);
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.slider {
+  width: 94%;
+  max-width: 1200px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  width: calc(220px * 10);
+  animation: slide 35s linear infinite;
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 10px;
+  flex: 0 0 auto;
+}
+.slide img {
+  filter: grayscale(100%);
+}
+
+.slide:hover img {
+  filter: grayscale(0%);
+}
+.slide img {
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  gap: 100px;
+  object-fit: cover;
+}
+
+.slide p {
+  margin-top: 20px;
+  text-align: center;
+  color: var(--text-color);
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-220px * 5));
+  }
+}
+
+.slider:hover .slider-track {
+  animation-play-state: paused;
+}
+.slider__container {
+  overflow: hidden;
+}
+/*
+ * ==============================
+ * Blog section
+ * ==============================
+ * Author: Ibrahim Khalil 
+ * ==============================
+ */
+
+.blog-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blog-title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 70px;
+  color: var(--text-color);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.blog-card {
+  background: var(--button-text-color);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.blog-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.blog-content {
+  padding: 20px;
+  text-align: left;
+}
+
+.blog-category {
+  font-size: 14px;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.blog-category span {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.blog-heading {
+  font-size: 18px;
+  color: var(--text-color);
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+.blog-content a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+.blog-link {
+  font-size: 24px;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.blog-link:hover {
+  color: var(--accent-color);
+}
+.blog-content a h3:hover {
+  color: var(--accent-color);
+  transition: 0.5s;
+}
+/*
+* ==============================
+* Pricing section
+* ==============================
+* Author: Ibrahim Khalil 
+* ==============================
+*/
+/* Pricing Section */
+.pricing-section {
+  padding: 80px 20px;
+  background-color: #fff;
+  padding-bottom: 120px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricing-title {
+  font-size: 2rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.pricing-heading {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.pricing-heading .highlight {
+  color: var(--accent-color);
+}
+
+.action-button-container {
+  text-align: right;
+  margin-bottom: 40px;
+}
+
+.custom-button:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+}
+.custom-button span {
+  margin-left: 5px;
+  font-size: larger;
+}
+.custom-button {
+  padding: 15px 35px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 2px;
+  background-color: var(--text-color);
+  position: relative;
+  top: 65px;
+  transition: background-color 0.5s ease;
+}
+.pricing_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* Pricing Cards */
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.pricing-card {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  height: 200px;
+  width: 350px;
+}
+
+.pricing-card:hover {
+  box-shadow: 0px 36px 100px 0px rgba(8, 8, 8, 0.05);
+  background-color: var(--button-text-color);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.plan-name {
+  font-size: 18px;
+  color: #333;
+}
+
+.plan-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff8800;
+}
+
+.card-content {
+  margin-bottom: 20px;
+}
+
+.plan-hours {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 60px;
+}
+
+.plan-details {
+  font-size: 14px;
+  color: #777;
+}
+
+.pricing-card .arrow {
+  position: absolute;
+  bottom: 40px;
+  right: 50px;
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
+
+.pricing-card:hover .arrow {
+  color: var(--accent-color);
+}
+.blog-card:hover .blog-image {
+  filter: grayscale(0%);
+}
+
+.blog-image {
+  filter: grayscale(30%);
+}
+
+/*
+ * ==============================
+ * Footer section
+ * ==============================
+ * Author: Ibrahim Khalil 
+ * ==============================
+ */
+.footer {
+  background-color: #000;
+  color: var(--button-text-color);
+  padding: 50px 20px;
+  font-family: "Arial", sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  width: 100%;
+}
+.footer-left {
+  width: 100%;
+  display: flex;
+}
+.footer_heading_box {
+  height: 250px;
+  width: 400px;
+}
+.footer-heading {
+  font-size: 4rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 0;
+}
+
+.highlight-circle {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 1px;
+  z-index: -1;
+}
+.footer .social .fab:hover,
+.far:hover {
+  color: var(--accent-color);
+}
+.footer .social .fab,
+.far {
+  font-weight: 700;
+  color: var(--button-text-color);
+  font-size: 22px;
+}
+.footer-location {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.icon-link {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.icon-link:hover {
+  color: orange;
+}
+
+.footer-cards {
+  display: flex;
+  gap: 20px;
+  flex: 2;
+}
+
+.footer-card {
+  border: 1px solid var(--text-color);
+  padding: 30px;
+  border-radius: 8px;
+  width: 380px;
+  height: 250px;
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  flex-direction: column;
+}
+
+.footer-card p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: orange;
+  text-decoration: none;
+}
+
+.footer-link .arrow {
+  margin-left: 5px;
+}
+
+.footer-link:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  text-align: center;
+  border-top: 1px solid #222;
+  padding-top: 20px;
+}
+
+.footer-logo {
+  font-size: 8.8rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-rights {
+  color: var(--button-text-color);
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.back-to-top {
+  text-decoration: none;
+  font-size: 1rem;
+  color: var(--button-text-color);
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.5s ease;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.back-to-top .arrow {
+  margin-left: 5px;
+}
+
+.back-to-top:hover {
+  color: var(--accent-color);
+}
+.copy_rightsection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 16px;
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .blog-title {
+    font-size: 2rem;
+  }
+  /* Center-align content for mobile */
+  header .main_container {
+    display: flex !important;
+    justify-content: start;
+  }
+
+  /*
+ * ==============================
+ * CODE Responsive styles  section
+ * ==============================
+ * Author: Ibrahim Khalil 
+ * ==============================
+ */
+  .intro_txt {
+    height: 600px;
+    width: 100%;
+    justify-content: center;
+    align-items: start;
+    text-align: start;
+  }
+  .main_container {
+    height: auto !important;
+  }
+  /*
+ * ==============================
+ * CODE Responsive styles side bar section
+ * ==============================
+ * Author: Ibrahim Khalil 
+ * ==============================
+ */
+  .sidebar {
+    width: 350px !important;
+  }
+  .intro_profile,
+  .intro_profile img {
+    display: none;
+  }
+  .main_container {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .intro_txt {
+    width: 100%;
+    margin: 0;
+  }
+
+  .greeting {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .greeting .devider {
+    display: none; /* Hide divider on mobile if needed */
+  }
+
+  .name {
+    font-size: 4.5rem;
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+
+  .last-name {
+    display: block;
+    font-size: 1em;
+  }
+
+  .role {
+    font-size: 1.6rem;
+    margin: 10px 0 20px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .primary-button,
+  .secondary-button {
+    padding: 10px 65px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-align: center;
+  }
+  /*
+ * ==============================
+ * CODE Responsive styles social icons
+ * ==============================
+ * Author: Ibrahim Khalil 
+ * ==============================
+ */
+  .social-icons {
+    margin-top: 25px;
+  }
+  .social {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+  }
+  .clients_counter {
+    width: 100% !important;
+  }
+  .devider {
+    display: none;
+  }
+  .hi {
+    padding: 0px 20px;
+  }
+  .intro_txt .profile_shape {
+    height: 50px;
+    width: 50px;
+    margin-bottom: 390px;
+  }
+  .container,
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .specialties-section .header .left h1 {
+    font-size: 2rem;
+  }
+  .header .left {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+  }
+  .specialties-section .header {
+    display: flex;
+    align-items: start;
+    margin-bottom: 0px;
+  }
+  .right p {
+    margin-top: 10px;
+    width: 350px !important;
+  }
+  .hiii {
+    text-align: start;
+  }
+  .specialties-section {
+    margin-top: 50px;
+  }
+  .my_specialities_cards {
+    width: 100%;
+    height: auto;
+    gap: 0px;
+    margin-top: 50px;
+    flex-direction: column;
+  }
+  .card {
+    width: 100%;
+    margin: 15px 0px;
+  }
+  .contact-box {
+    height: 200px;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .specialties-grid {
+    gap: 10px;
+    width: 100%;
+  }
+  .hero-section .content {
+    max-width: 100%;
+  }
+  .hero-section .content .title {
+    font-size: 2rem;
+  }
+  .hero-section .image-container .profile-image {
+    position: relative;
+    z-index: 2;
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+  }
+  .hero-section .image-container {
+    max-width: 100%;
+  }
+  .hero-section .image-container .blob {
+    position: absolute;
+    width: 350px;
+    height: 420px;
+    border-radius: 10%;
+  }
+  .hero-section .image-container .experience {
+    background-color: var(--button-text-color);
+    color: var(--text-color);
+  }
+  .hero-section .cta-button {
+    padding: 15px 50px;
+  }
+  .resume-container {
+    flex-direction: column;
+    position: relative;
+  }
+  .resume-title {
+    font-size: 2rem;
+  }
+  .resume-left {
+    width: 100%;
+  }
+  .portfolio-footer .portfolio-link {
+    padding: 15px 5rem;
+  }
+  .hero-section .container {
+    height: 950px;
+  }
+  .resume-section {
+    height: auto;
+  }
+  .portfolio-section h2 {
+    font-size: 2rem;
+  }
+  .portfolio-subtitle {
+    font-size: 24px;
+  }
+  .portfolio-items {
+    flex-direction: column;
+  }
+  .portfolio-item {
+    height: 100%;
+    width: 100%;
+  }
+  .portfolio-name a:hover {
+    color: var(--accent-color);
+  }
+  .portfolio-name a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 25px !important;
+    transition: 0.5s;
+  }
+  .portfolio-name {
+    text-align: start;
+    font-size: 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px !important;
+  }
+  .testimonial-section .container {
+    height: 400px;
+  }
+  .testimonial-slider {
+    width: 30%;
+  }
+  .testimonial-header p {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .testimonial-header h2 {
+    font-size: 2.6rem;
+    margin-bottom: 14px;
+    margin-right: 60px;
+  }
+  .testimonial-card {
+    background-color: var(--secondary-color);
+    padding: 20px;
+  }
+  .testimonial-slider {
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.39);
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.39);
+  }
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-left {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .footer-heading {
+    font-size: 2.5rem;
+  }
+
+  .footer-cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-card {
+    flex: 1;
+  }
+
+  .footer-bottom {
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-size: 2.3rem;
+}
+
+  .back-to-top {
+    font-size: 0.9rem;
+  }
+  .pricing_head {
+    flex-direction: column;
+  }
+  .pricing-heading {
+    font-size: 2rem;
+    margin-bottom: 0px;
+  }
+  .pricing-title {
+    font-size: 24px;
+  }
+  .pricing-section {
+    padding: 60px 20px;
+    background-color: #fff;
+  }
+  .pricing_head {
+    align-items: start;
+  }
+  .pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 70px;
+  }
+  .footer_heading_box {
+    width: 100%;
+    text-align: start;
+  }
+  .highlight-circle {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    left: 3px;
+    z-index: -1;
+  }
+  .footer .social-icons {
+    margin-top: 0px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  .footer-card {
+    height: 200px;
+    width: 350px;
+    text-align: start;
+  }
+  .footer-card p {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .footer-link {
+    font-size: 1.2rem;
+  }
+  .back-to-top{
+    display: none;
+  }
+  .footer-rights {
+    color: var(--button-text-color); 
+    font-size: 17px;
+    line-height: 28px; 
+    opacity: 0.9;
+    margin-top: 30px;
+}
+}
